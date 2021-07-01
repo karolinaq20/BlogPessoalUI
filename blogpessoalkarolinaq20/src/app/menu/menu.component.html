@@ -7,22 +7,22 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav ml-auto d-flex align-items-center">
             <li class="nav-item active">
-                <img src="https://lh3.googleusercontent.com/itcqKBqnZCUhf5r3x6cKo_QKP11G4DKni6u3tifrfhbhPHmNyLZ4_MDl8DEnhfPCptf9a6WV6ZAhxhKTgw5kneB3fEr9xE2_RS0kr4ekr3ZiYiX4sDjfmGf84uHF8nV5Xy-qEehyFkEMEnIRCO_jDAUId0Nk3db5yebhEDYjH4w8QPYNmxPKUIPy6LMkgaHcGBjobJF94iYGCnQl2vPEZfMt5FkRUaf8aejqa_RqBqqFo3vROlpxtCIvwNAxACKJYQ-gpP5jrl1st8UoUQgxhQgrp65CL3oexkVzNHSir3qdJzUbL_LjZ288I1mY6RyHEWdT1pz2HkdeHBZvI__Y5SFgJVdFRWxaw_4tJEQJM3KsVKWWN8OaQoP9jZXAYrB3akTRTp6VAI1B8fs4m4Z76u7VCzarzxkTNxRBbzVvSGM2-8IHHzhuPRzNUnl6FT25ADQgMgZmBEVAmOp7G2R6sAsxwhwXWMTqHLa7R3F6q9mVu9TSktL5bQOmAug3VAK1ufGFgB6IY6LVHEcXxj-6qEfW569TskI5YHGT8r3cpP3bxtXUKqbfRDw0sCcZHFuTApSc7I86lPay-timieJf9z3HCNstowlmwnwAgTCRfpv4_uj89mLHixTupUQfugbLRCxcoDXpUPNE5XduG5tkNX4oV726EN7yDEjt_PpQNC4TldvwoSG6XFKlUyp-aOWS5fLS0ri91WsNZpEhhiLLE55z=w1024-h819-no?authuser=0"
-                    alt="Imagem do User" width="60px" height="60px" class="img-fluid rounded-circle">
+                <img src="{{foto}}" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
             </li>
             <li class="nav-item pl-3">
-                <p class="m-0 font-weight-bold text-dark fs-16">Nome do usuário</p>
+                <p class="m-0 font-weight-bold text-dark fs-16">Olá, {{nome}}</p>
             </li>
             <li class="nav-item pl-3">
                 <a href="">
-                    <p class="text-dark fs-16 m-0"><i class="fa fa-pencil-square-o " aria-hidden="true"></i></p> 
+                    <p class="text-dark fs-16 m-0"><i class="fa fa-pencil-square-o " aria-hidden="true"></i></p>
                 </a>
-              
+
             </li>
         </ul>
         <ul class="navbar-nav ml-auto d-flex align-items-center">
             <li class="nav-item pl-3">
-                <a class="m-0 font-weight-bold text-dark fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+                <a (click)="sair()" class="m-0 font-weight-bold text-dark fs-16">Sair <i class="fa fa-sign-out"
+                        aria-hidden="true"></i></a>
             </li>
         </ul>
     </div>
