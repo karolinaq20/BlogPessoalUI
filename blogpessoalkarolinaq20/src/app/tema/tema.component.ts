@@ -34,7 +34,6 @@ findAllTemas(){
     this.listaTemas = resp
   })
 }
-
   cadastrar() {
     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
      this.tema = resp 
