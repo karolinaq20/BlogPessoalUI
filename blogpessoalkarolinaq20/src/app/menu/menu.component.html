@@ -13,15 +13,15 @@
                 <p class="m-0 font-weight-bold text-dark fs-16">Olá, {{nome}}</p><!--As duas chaves é a interpolação-->
             </li>
             <li class="nav-item pl-3"><!-- padding left-3  -->
-                <a href="">
+                <a [routerLink]="['/user-edit',id]">
                     <p class="text-dark fs-16 m-0"><i class="fa fa-pencil-square-o " aria-hidden="true"></i></p>
                 </a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto d-flex align-items-center">
             <li class="nav-item pl-3">
-                <a (click)="sair()" class="m-0 font-weight-bold text-dark fs-16">Sair <i class="fa fa-sign-out"
-                        aria-hidden="true"></i></a>
+                <a class="fs-14 text-dark dropdown-item" (click)='sair()'><i class="fa fa-sign-out" aria-hidden="true"></i> Sair
+                </a>
             </li>
         </ul>
     </div>

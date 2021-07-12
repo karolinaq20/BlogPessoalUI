@@ -80,7 +80,7 @@
                             <small class="text-muted "> Tema: {{item.tema.descricao}}</small>
                             <p class="card-text mt-3">{{item.texto}}</p>
                             <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} ás
-                                    {{item.date | date: "HH:mm"}
+                                    {{item.date | date: "HH:mm"}}
                                 </small></p>
 
                                 <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
@@ -103,8 +103,7 @@
                         <div class="card-body">
                             <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <p class="card-text mt-3">{{item.texto}}</p>
-                            <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} ás
-                                    {{item.date | date: "HH:mm"}}
+                            <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} ás{{item.date | date: "HH:mm"}}
                                 </small></p>
 
                             <p class="card-text"><small class="text-muted">
@@ -120,50 +119,44 @@
             <!-- /Postagens por Tema-->
         </div>
     </div>
-    <!-- Modal -->
-<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+     <!-- Modal -->
+     <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-
-            <div class="form-group">
-                <label for="titulo">Título</label>
-                <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
-                    placeholder="Digite o título">
+              </button>
             </div>
-
-            <div class="form-group">
+            <div class="modal-body">
+              <div class="form-group">
+                  <label for="titulo">Título</label>
+                  <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o título">
+              </div>
+    
+              <div class="form-group">
                 <label for="texto">Texto</label>
-                <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto"
-                    rows="3"></textarea>
+                <textarea [(ngModel)]='postagem.texto' class= "form-control" name="texto" id="texto" rows="3"></textarea>
             </div>
-
+    
             <div class="form-group">
-                <label for="Texto">Escolha um Tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um
-                        novo</a>:</label>
-                <select class="form-control" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                    <option *ngFor='let tema of listaTemas' value='{{tema.id}}'>
-                        {{tema.descricao}}
+                <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
+                <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                    <option *ngFor = 'let item of listaTemas' value="{{item.id}}">
+                      {{item.descricao}}
                     </option>
                 </select>
             </div>
-
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-success" (click)="publicar()"
-                data-dismiss="modal">Publicar</button>
-        </div>
-    </div>
-</div>
-</div>
+      </div>
 <!-- /Modal -->
 
    
